@@ -1,0 +1,25 @@
+[en]
+CHAT_VIPS_ONLY = This commands is only for !tVIP!n players.
+MENU_ON = On
+MENU_OFF = Off
+MENU_SETTINGS = Settings
+MENU_SPEED = Speed
+MENU_JUMP = Double jump
+MENU_MODEL = Model
+MENU_SCORE = Score tag
+MENU_CHAT = Chat prefix
+MENU_RESPAWN = Extra life
+MENU_CLOSE = Close settings
+
+[sr]
+CHAT_VIPS_ONLY = Ova komanda je samo za !tVIP!n igrace.
+MENU_ON = Ukljuceno
+MENU_OFF = Iskljuceno
+MENU_SETTINGS = Podesavanja
+MENU_SPEED = Brzina
+MENU_JUMP = Dupli skok
+MENU_MODEL = Model
+MENU_SCORE = Skor tag
+MENU_CHAT = Prefix u cetu
+MENU_RESPAWN = Dodatni zivot
+MENU_CLOSE = Zatvori podesavanja
