@@ -98,6 +98,15 @@ public plugin_init()
 			break;
 		}
 	}
+	new WepID = -1;
+	while((WepID = find_ent_by_model(WepID,"armoury_entity","models/p_knife.mdl")) != 0)
+	{
+		remove_entity(WepID);
+	}
+	WepID = -1;
+	while((WepID = find_ent_by_class(WepID, "game_player_hurt")) != 0 )
+		remove_entity(WepID);
+		
 	set_task(5.0, "CheckForDeads", _,_,_,"b", 1);
 }
 
@@ -209,3 +218,6 @@ public CheckForDeads()
 		SetTask(id);
 	}
 }
+/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
+*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1033\\ f0\\ fs16 \n\\ par }
+*/

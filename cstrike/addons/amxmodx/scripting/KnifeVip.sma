@@ -5,7 +5,7 @@
 #include <hamsandwich> 
 
 //#define SERVER 	  "176.57.188.24:27040" //explosion Knife Arena
-#define DATE 	  "15.1.2016" 		//Datum kada istice plugin
+#define DATE 	  "15.1.2018" 		//Datum kada istice plugin
 
 #define SCORE_NONE    0
 #define SCORE_DEAD    (1 << 0)
@@ -354,3 +354,6 @@ stock PrintChat(const id, const input[], any:...)
 
 public plugin_end()
 	nvault_close(vault);
+/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
+*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1033\\ f0\\ fs16 \n\\ par }
+*/
