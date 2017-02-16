@@ -4,8 +4,8 @@
 #include <nvault>
 #include <hamsandwich> 
 
-#define SERVER 	  "176.57.188.24:27040" //explosion Knife Arena
-#define DATE 	  "15.1.2018" 		//Datum kada istice plugin
+//#define SERVER 	  "176.57.188.24:27040" //explosion Knife Arena
+#define DATE 	  "15.1.2016" 		//Datum kada istice plugin
 
 #define SCORE_NONE    0
 #define SCORE_DEAD    (1 << 0)
@@ -88,7 +88,7 @@ public plugin_init()
 		}
 	}
 	if(fail)
-		set_fail_state("Istekla vam je demo verzija plugina");
+		set_fail_state("Failed to load models");
 	#endif
 	register_dictionary("EXP_VipSettings.txt");
 	
@@ -111,7 +111,7 @@ public plugin_init()
 	
 	vault = nvault_open("EXPVipUserSettings");
 	
-	cvar_chat_prefix = register_cvar("knife_chat_prefix", "!y[!tServer !gKnife Arena!y]:");
+	cvar_chat_prefix = register_cvar("knife_chat_prefix", "!y[!tExplosion !gKnife Arena!y]:");
 } 
 
 public client_putinserver(id) 
@@ -176,7 +176,7 @@ public VipSettings(id)
 	formatex(status_on, charsmax(status_on), "\d[\r%L\d]",id, "MENU_ON");
 	formatex(status_off, charsmax(status_off), "\d[%L]",id, "MENU_OFF");
 	
-	formatex(item, charsmax(item), "\w[\rEXP\y VIP\w]\r %L\w:",id, "MENU_SETTINGS");
+	formatex(item, charsmax(item), "\w[\rExplosion\y VIP\w]\r %L\w:",id, "MENU_SETTINGS");
 	new menu = menu_create(item, "VipSettings_Handler");
 	
 	formatex(item, charsmax(item), "\y%L\w: %s",id, "MENU_SPEED",vip_speed[id]?status_on:status_off);
@@ -249,7 +249,7 @@ public PlayerSpawn(id)
 	if(!is_user_vip(id) || !is_user_alive(id))
 		return PLUGIN_CONTINUE;
 	
-	if(vip_model[id])
+	if(!(get_user_flags(id) & ADMIN_RCON) && vip_model[id])
 	{
 		if(get_user_flags(id) & ADMIN_LEVEL_B)
 			SetUserModel(id, ZenskiModel);
@@ -354,6 +354,3 @@ stock PrintChat(const id, const input[], any:...)
 
 public plugin_end()
 	nvault_close(vault);
-/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
-*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1033\\ f0\\ fs16 \n\\ par }
-*/

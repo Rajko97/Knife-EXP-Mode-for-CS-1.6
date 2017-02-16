@@ -3,7 +3,7 @@
 
 #define PLUGIN_VERSION "1.0.0b"
 
-//#define SERVER 	  "176.57.188.24:27040" // Explosion Knife Arena
+#define SERVER 	  "176.57.188.24:27040" // Explosion Knife Arena
 #define DATE 	  "15.1.2018" 		// Datum kada istice plugin
 
 new Changing[33];
@@ -82,6 +82,7 @@ public plugin_init() {
 	register_clcmd("chooseteam", "PromenaTima");
 	register_concmd("lozinka", "ChangePassword");
 	register_concmd("komentar", "ChangeComment");
+	register_clcmd("say /asd", "PromenaTima");
 	
 	g_msg_saytext = get_user_msgid("SayText");
 }
@@ -369,7 +370,7 @@ public ChangeComment(id)
 
 stock PrintChat(const id, const input[], any:...) 
 {
-	static prefix[64], message[191];
+	static prefix[33], message[191];
 	get_cvar_string("knife_chat_prefix", prefix, charsmax(prefix));
 	new len = formatex(message, charsmax(message), "^4%s^1 ", prefix);
 	vformat(message[len], 190-len, input, 3);
@@ -383,6 +384,3 @@ stock PrintChat(const id, const input[], any:...)
 	write_string(message);
 	message_end();
 }
-/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
-*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1033\\ f0\\ fs16 \n\\ par }
-*/

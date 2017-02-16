@@ -1,5 +1,5 @@
-#define SERVER 	  "176.57.188.24:27040" //explosion knife arena
-#define DATE 	  "15.1.2018" 		//Datum kada istice plugin
+//#define SERVER  "176.57.188.24:27040" //explosion knife arena
+//#define DATE 	  "15.1.2018"	//Datum kada istice plugin
 
 #include <amxmodx>
 #include <fun>
@@ -29,8 +29,8 @@ new const Health[] = {100, 1, 35, 65, 200};
 
 public plugin_init()
 {
-	register_plugin("EPG Knife Respawn", "1.1.0b", "EPG Team");
-	register_cvar("EPGknifeRES", "1", FCVAR_SERVER|FCVAR_SPONLY);
+	register_plugin("EXP Knife Respawn", "1.0b", "Rajko");
+	register_cvar("EXPknifeRES", "1", FCVAR_SERVER|FCVAR_SPONLY);
 	
 	#if defined SERVER
 	/*new IP[64], PORT[16];
@@ -72,7 +72,7 @@ public plugin_init()
 		}
 	}
 	if(fail)
-		set_fail_state("Falied to load models");
+		set_fail_state("Istekla vam je demo verzija plugina. Kontakt: rmilanrajkovic@gmail.com");
 	#endif
 	
 	RegisterHam(Ham_Killed, "player", "PlayerKilled", 1);
